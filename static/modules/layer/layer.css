@@ -1,0 +1,30 @@
+
+.content{
+	width: 100%;
+	/*position: relative;*/
+
+}
+.clearfix:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+.content .pic{
+	width: 100%;
+}
+.content img.currentImg{
+	width: 100%;
+	font-size: 0px;
+	// position: absolute;
+	// left: 0px;
+	// top: 0px;
+	
+	/*transform: translateX(0);*/
+}
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, width=device-width">
+	<title>Pinterest</title>
+</head>
+<body>
+<!-- pinGird模板 -->
+<script type="text/template" id="tpl_pinGird">
+		<div class='pinGird'>
+			<a href="#layer/<%=id%>">
+			<div class="pinImg">
+				<img src="<%=pinUrl%>" >
+			</div>
+			<div class="pinMeta">
+				<div class="title"><%=pinTitle%></div>
+				<div class="description"><%=pinDescription%></div>
+			</div>
+			<div class="pinSocialItem">
+				<div class="item"><%=pinSocialitem%></div>
+				<div class="like"><%=pinLike%></div>
+			</div>
+			<div class="pinAttribute"><%=pinAttribution%></div>
+			</a>
+			<div class="pinCredit">
+				<div class="credit"></div>
+				<div class="picked"><%=pinPiked%></div>
+				<div class="souceType"><%=pinSourceType%></div>
+			</div>
+		</div>
+		
+</script>
+<!-- 大图模板 -->
+<script type="text/template" id="tpl_pinlLayer">
+	<div class="goBack"></div>
+	<div class="content">
+			<div class="pic clearfix"><img class= 'currentImg' src="<%=pinUrl%>"></div>
+			<div class="pinMeta">
+				<div class="title"><%=pinTitle%></div>
+				<div class="description"><%=pinDescription%></div>
+			</div>
+			<div class="pinAttribute"><%=pinAttribution%></div>
+			</a>
+			<div class="pinCredit">
+				<div class="credit"></div>
+				<div class="picked"><%=pinPiked%></div>
+				<div class="souceType"><%=pinSourceType%></div>
+			</div>
+			
+	</div>
+</script>
+<!-- 应用程序 -->
+<div class="app" id="app">
+	<!-- 主界面 -->
+	<section class="list">
+		<!-- nav -->
+		<div class="nav">
+			<div class="search" >
+				<input type="text" placeholder="search">
+				<span class="searchBtn"></span>
+			</div>
+			<div class = "group">
+				<span class="groupBtn"></span>
+				<div class = "group_pannal hide">
+					<ul class="type">
+					<li data-id="1"> Film</li>
+					<li data-id="2"> Humor</li>
+					<li data-id="3"> Design</li>
+					<li data-id="4"> UI</li>
+					<li data-id="5"> Fashion</li>
+					<li data-id="6"> Pet </li>
+					<li data-id="7"> Art </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- header -->
+		<header class="header">
+			<h1>Pinterest</h1>
+			<p>Pinterest/.header..header</p>
+		</header>
+		<!-- 主界面的数据渲染区 -->
+		<div class="pinWrapper">
+			<div class="leftContent" id = "leftContent">
+
+			</div>
+			
+			<div class="rightContent" id = "rightContent">
+				
+			</div>
+		</div>
+		<span class="go-top">TOP</span>
+	</section>
+	<!-- 大图界面 -->
+	<section class="layer" id = "layer" >
+		
+	</section>
+</div>
+<script type="text/javascript" src="static/sea.js"></script>
+<script type="text/javascript" src="static/lib/seajs-css.js"></script>
+<script type="text/javascript" src="static/lib/seajs-preload.js"></script>
+<script type="text/javascript" src="static/lib/zepto.min.js"></script>
+<script type="text/javascript" src="static/lib/underscore.js"></script>
+<script type="text/javascript" src="static/lib/backbone.js"></script>
+<script type="text/javascript">
+// 配置文件
+seajs.config({
+	alias: {
+		layer: 'modules/layer/layer',
+		list: 'modules/list/list',
+		imgModel: 'modules/model/img',
+		imgCollection: 'modules/collection/img'
+	}
+})
+// 入口文件
+seajs.use('app', function (app) {
+	app();
+})
+</script>
+</body>
+</html>
